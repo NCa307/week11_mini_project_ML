@@ -1,18 +1,23 @@
 # Diabetes Prediction Using Machine Learning
 
 ## **Project Overview**
-This project predicts the presence of diabetes in patients based on health and lifestyle data using two machine learning models:
+This project predicts the presence of diabetes in patients using two machine learning models:  
 
-1. **Decision Tree Classifier** 
-2. **K-Nearest Neighbors (KNN) Classifier** 
+- **Decision Tree Classifier** – interpretable, rule-based model  
+- **K-Nearest Neighbors (KNN) Classifier** – distance-based model requiring feature scaling  
 
-The goal is to explore predictive modeling, evaluate performance, and compare the strengths of each algorithm.
+The goal is to build predictive models, evaluate performance, and compare their strengths.
+
+---
+
 ## **Dataset**
 - **Source:** `diabetes_prediction_dataset.csv`  
 - **Number of records:** 100,000  
-- **Features (9 total):**  
-| Feature              | Type        | Description                                                                |
-|--------------------- |------------ |----------------------------------------------------------------------------|
+
+**Features:**
+
+| Feature              | Type        | Description                                                                 |
+|---------------------|------------|----------------------------------------------------------------------------|
 | gender               | categorical | Patient gender                                                             |
 | age                  | numeric     | Age in years                                                               |
 | hypertension         | numeric     | Hypertension status (0 = No, 1 = Yes)                                      |
@@ -20,22 +25,21 @@ The goal is to explore predictive modeling, evaluate performance, and compare th
 | smoking_history      | categorical | Smoking history (`ever`, `current`, `former`, `never`, `not current`, `No Info`) |
 | bmi                  | numeric     | Body Mass Index                                                            |
 | HbA1c_level          | numeric     | Blood sugar level over time                                                |
-| blood_glucose_level  | numeric     | Current blood glucose                                                      |
-| diabetes             | target      | 0 = No, 1 = Yes                                                            |
-                                                               |
-
-
-**Data Cleaning Steps:**
-1. Replace `"No Info"` in `smoking_history` with `NaN` and drop those rows  
-2. Remove duplicate rows (925 duplicates removed)  
-3. One-hot encode categorical variables: `gender` and `smoking_history`  
-
-**Resulting dataset:** 63,259 rows × 13 columns
+| blood_glucose_level  | numeric     | Current blood glucose                                                     |
+| diabetes             | target      | 0 = No, 1 = Yes                                                           |
 
 ---
 
-## **Data Preprocessing**
-- **One-hot encoding:** converted categorical variables into dummy variables, dropping the first category to avoid multicollinearity  
-- **Scaling (for KNN only):** normalized features to [0,1] using `MinMaxScaler`  
-- **Train-test split:** 80% training, 20% testing
+## **Data Cleaning & Preprocessing**
+1. Replaced `"No Info"` in `smoking_history` with `NaN` and dropped those rows  
+2. Removed duplicate rows (925 duplicates removed)  
+3. One-hot encoded categorical variables: `gender` and `smoking_history`  
+4. Train-test split: 80% training, 20% testing  
+5. Scaling applied for KNN using `MinMaxScaler`  
+
+```python
+X = diabetes.drop("diabetes", axis=1)
+y = diabetes["diabetes"].astype(str)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
 - 
