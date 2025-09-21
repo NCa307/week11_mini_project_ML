@@ -11,8 +11,8 @@ The goal is to explore predictive modeling, evaluate performance, and compare th
 - **Source:** `diabetes_prediction_dataset.csv`  
 - **Number of records:** 100,000  
 - **Features (9 total):**  
-| Feature              | Type        | Description                                                                 |
-|---------------------|------------|----------------------------------------------------------------------------|
+| Feature              | Type        | Description                                                                |
+|--------------------- |------------ |----------------------------------------------------------------------------|
 | gender               | categorical | Patient gender                                                             |
 | age                  | numeric     | Age in years                                                               |
 | hypertension         | numeric     | Hypertension status (0 = No, 1 = Yes)                                      |
@@ -20,8 +20,8 @@ The goal is to explore predictive modeling, evaluate performance, and compare th
 | smoking_history      | categorical | Smoking history (`ever`, `current`, `former`, `never`, `not current`, `No Info`) |
 | bmi                  | numeric     | Body Mass Index                                                            |
 | HbA1c_level          | numeric     | Blood sugar level over time                                                |
-| blood_glucose_level  | numeric     | Current blood glucose                                                     |
-| diabetes             | target      | 0 = No, 1 = Yes                                                           |
+| blood_glucose_level  | numeric     | Current blood glucose                                                      |
+| diabetes             | target      | 0 = No, 1 = Yes                                                            |
                                                                |
 
 
