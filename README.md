@@ -16,12 +16,12 @@ The goal is to explore predictive modeling, evaluate performance, and compare th
 | gender | categorical | Patient gender |
 | age | numeric | Age in years |
 | hypertension | numeric | Hypertension status (0/1) |
-| heart_disease | numeric | Heart disease status (0/1) |
-| smoking_history | categorical | Smoking history (`ever`, `current`, `former`, `never`, `not current`, `No Info`) |
+| heart_disease | numeric | Heart disease status (0/1) /
+/ smoking_history | categorical | Smoking history (`ever`, `current`, `former`, `never`, `not current`, `No Info`) |
 | bmi | numeric | Body Mass Index |
-| HbA1c_level | numeric | Blood sugar level over time |
-| blood_glucose_level | numeric | Current blood glucose |
-| diabetes | target | 0 = No, 1 = Yes |
+| HbA1c_level | numeric | Blood sugar level over time /
+/ blood_glucose_level | numeric | Current blood glucose /
+/ diabetes / target / 0 = No, 1 = Yes /
 
 **Data Cleaning Steps:**
 1. Replace `"No Info"` in `smoking_history` with `NaN` and drop those rows  
