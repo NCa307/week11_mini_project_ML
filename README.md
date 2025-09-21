@@ -3,8 +3,8 @@
 ## **Project Overview**
 This project predicts the presence of diabetes in patients using two machine learning models:  
 
-- **Decision Tree Classifier** – interpretable, rule-based model  
-- **K-Nearest Neighbors (KNN) Classifier** – distance-based model requiring feature scaling  
+- **Decision Tree Classifier** 
+- **K-Nearest Neighbors (KNN) Classifier** 
 
 The goal is to build predictive models, evaluate performance, and compare their strengths.
 
@@ -37,9 +37,4 @@ The goal is to build predictive models, evaluate performance, and compare their 
 4. Train-test split: 80% training, 20% testing  
 5. Scaling applied for KNN using `MinMaxScaler`  
 
-```python
-X = diabetes.drop("diabetes", axis=1)
-y = diabetes["diabetes"].astype(str)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-- 
